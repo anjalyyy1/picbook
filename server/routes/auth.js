@@ -85,9 +85,11 @@ router.post("/signin", (req, res) => {
         if (didMatch) {
           //once signed successfully give FE a jwt token so tht FE can access protected routes
           const token = jwt.sign({ _id: user._id }, JWT_SECRET);
+          const { _id, email, name } = user;
 
           res.json({
-            token
+            token,
+            userData: { _id, email, name }
           });
         } else {
           return res.status(422).json({

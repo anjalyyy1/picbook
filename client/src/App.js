@@ -1,8 +1,14 @@
 import React from "react";
-import "./App.css";
+import Routes from "routes";
+import GlobalStyle from "./globalStyles";
 
 function App() {
-  return <div className="App">app</div>;
+  return (
+    <div className="App">
+      <Routes />
+      <GlobalStyle />
+    </div>
+  );
 }
 
 export default App;
